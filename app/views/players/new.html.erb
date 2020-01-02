@@ -1,0 +1,16 @@
+<div class='main-background'>
+
+</form>
+    
+    <div class='new-player-form'>
+    <%= flash[:message]%>
+    <%=form_for @player do |f| %>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+        <%= f.label :age %>
+        <%= f.text_field :age %>
+        <%= collection_select(:player, :team_id, Team.all, :id, :name)%>
+        <%= f.submit%>
+    <%end%>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+Team Name: <%= @team.name%><br>
+Points: <%= @team.point%><br>
+
+<h2>Players</h2>
+ <% @team.players.each do |player|%>
+<li>
+<%=player.name%><br>
+</li>
+<%end%>
+
+<%= link_to "Return", teams_path%>

@@ -1,0 +1,9 @@
+<%= @player.name%><br>
+
+<%= @player.age%><br>
+<%= link_to "All players", players_path%><br>
+<%= link_to 'Destroy', player_path(@player),
+ :method => :delete %><br>
+ 
+<%= link_to 'Update', edit_player_path(@player) %>
+ 

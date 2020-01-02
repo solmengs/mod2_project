@@ -1,0 +1,14 @@
+<h1><%=@tournament.location%><br></h1>
+
+<%@tournament.games.each do |game| %><br>
+<%=link_to "Games", game_path(game.id)%><br>
+<%end%>
+
+<%# <%@team.players.each do |player| %>
+<%# <%=link_to "Players", player_path(player.id)%>
+<%# <%end%> 
+
+<%@tournament.teams.each do |team| %><br>
+<%=link_to "Teams", team_path(team.id)%><br>
+<%end%>
+
