@@ -1,5 +1,14 @@
+
+<%= form_tag(games_path,  method: :get) do %>
+  <%= label_tag(:q, "Search for:") %>
+  <%= text_field_tag(:search, params[:search]) %>
+  <%= submit_tag("Search") %>
+<% end %>
+
+<h3><%= link_to "Main Menu", tournament_teams_path%><br></h3>
 <%@games.each do |game|%><br>
-<%=game.day%><br>
-<%=game.time%><br>
+<p>Day: <%=game.day%></p><br>
+<p>Location: <%=game.tournament.location%></p><br>
+<p>Time: <%=game.time%><br>
 *****************
 <%end%>

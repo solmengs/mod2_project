@@ -19,20 +19,21 @@ class PlayersController < ApplicationController
     
       @player = Player.new(params_new)
       if @player.save
-        session[:player_id] = @player.id
+        session[:player_id] 
         redirect_to :root
       else
         flash[:message] = "This username already exist"
         redirect_to :login
       end
+      
     end 
   
     def edit
     end 
   
     def update
-      @player.update(params_new )
-      redirect_to player_path(@player)
+      @player.update(params_new)
+      redirect_to players_path(@player)
     end 
     def destroy
         @player.delete

@@ -1,2 +1,13 @@
+
+
+
+<% if @tournaments%>
+    <%@tournaments.each do |tournament|%>
+    <%=link_to tournament, tournament_path(tournament)%>
+    <%end%>
+<% end %>
+
+
 <h1><%=@game.day%></h1>
 <h1><%=@game.time%><br></h1>
+<%= link_to "Return", games_path%>

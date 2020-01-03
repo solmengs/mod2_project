@@ -6,7 +6,7 @@ class GamesController < ApplicationController
   
 
     def index
-      @games = Game.all
+      @games = Game.search(params[:search])
     end
     
     
@@ -14,13 +14,19 @@ class GamesController < ApplicationController
     end
     
   
+    def search 
+      # byebug
+     @tournaments = Game.all.where("location like ?", "%#{params[:search]}%")
+ 
+     redirect_to games_path
+  end 
   
     
     
   
     private
     def params_new 
-      params.require(:game).permit(:time, :day.uniq)
+      params.require(:game).permit(:time, :day, :search)
     end 
     def find_game
       @game = Game.find(params[:id])
