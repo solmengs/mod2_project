@@ -18,9 +18,10 @@ class PlayersController < ApplicationController
 
     
       @player = Player.new(params_new)
+      # byebug
       if @player.save
         session[:player_id] 
-        redirect_to :root
+        redirect_to players_path
       else
         flash[:message] = "This username already exist"
         redirect_to :login

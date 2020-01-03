@@ -1,6 +1,7 @@
 class Game < ApplicationRecord
     belongs_to :tournament
 def self.search(search)
+   
     results = Game.all
     if search != ""
         game = Game.select{|game| game.tournament.location == search}
@@ -12,5 +13,6 @@ def self.search(search)
     else
         results
     end 
+    
 end 
 end
